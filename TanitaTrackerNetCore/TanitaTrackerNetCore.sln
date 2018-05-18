@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web-NetCore", "Web-NetCore\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppService", "AppService\AppService.csproj", "{E43FA0D1-BEF2-4811-A347-2CCB0B7BF9FF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{B5CB4AE9-8C00-4DCF-A854-9C65BEC3D0B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,5 +21,9 @@ Global
 		{E43FA0D1-BEF2-4811-A347-2CCB0B7BF9FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E43FA0D1-BEF2-4811-A347-2CCB0B7BF9FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E43FA0D1-BEF2-4811-A347-2CCB0B7BF9FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5CB4AE9-8C00-4DCF-A854-9C65BEC3D0B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5CB4AE9-8C00-4DCF-A854-9C65BEC3D0B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5CB4AE9-8C00-4DCF-A854-9C65BEC3D0B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5CB4AE9-8C00-4DCF-A854-9C65BEC3D0B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
