@@ -12,4 +12,15 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\User\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\lib\dataTables\datatables.min.js" />
+    <Content Remove="wwwroot\css\datatables.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\lib\dataTables\datatables.min.js" />
+    <None Include="wwwroot\css\datatables.min.css" />
+  </ItemGroup>
 </Project>

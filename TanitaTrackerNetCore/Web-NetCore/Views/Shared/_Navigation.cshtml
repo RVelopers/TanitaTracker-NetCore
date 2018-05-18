@@ -21,11 +21,22 @@
                     JD+
                 </div>
             </li>
-            <li class="@Html.IsSelected(action: "Index")">
-                <a href="@Url.Action("Index", "Home")"><i class="fa fa-laptop"></i> <span class="nav-label">Home page</span> </a>
+            <li class="@Html.IsSelected(controller:"Home", action: "Index")">
+                <a href="@Url.Action("Index", "Home")"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span> </a>
             </li>
-            <li class="@Html.IsSelected(action: "About")">
-                <a href="@Url.Action("About", "Home")"><i class="fa fa-desktop"></i> <span class="nav-label">About page</span></a>
+            <li class="@Html.IsSelected(controller: "User")">
+                <a href="#"><i class="fa fa-group"></i> <span class="nav-label">Users</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li class="@Html.IsSelected(controller: "User", action:"Index")">
+                        <a href="@Url.Action("Index","User")"><i class="fa fa-users"></i> List of users</a>
+                    </li>
+                    <li class="@Html.IsSelected(controller: " User", action:"Roles")">
+                        <a href="@Url.Action("Roles","User")"><i class="fa fa-id-card"></i> Roles</a>
+                    </li>
+                    <li class="@Html.IsSelected(controller: " User", action:"Permissions")">
+                        <a href="@Url.Action(" Permissions","User")"><i class="fa fa-shield"></i> Permissions</a>
+                    </li>
+                </ul>
             </li>
             <li class="@Html.IsSelected(action: "Contact")">
                 <a href="@Url.Action("Contact", "Home")"><i class="fa fa-address-card"></i> <span class="nav-label">Contact Page</span></a>
