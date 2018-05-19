@@ -1,7 +1,9 @@
 ﻿using System;
+using Domain.Abstractions;
+
 namespace Domain.Entities
 {
-    public class User : BaseEntity
+    public class User : SoftDeletableEntity
     {
         /// <summary>
         /// Gets or sets the first name.

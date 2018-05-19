@@ -1,7 +1,7 @@
 ﻿using Domain.Abstractions;
 using Domain.Entities;
 
-namespace DatabaseMigrations.Framework
+namespace DatabaseMigration.Framework
 {
     public abstract class SoftDeleteEntityMigration<TSofteleteEntity> : EntityMigration<TSofteleteEntity>
       where TSofteleteEntity : BaseEntity, ISoftDeletableEntity

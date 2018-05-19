@@ -1,10 +1,10 @@
 ﻿using System;
 using FluentMigrator;
 
-namespace DatabaseMigrations.Migrations
+namespace DatabaseMigration.Migrations
 {
-    [Migration(20180430121800)]
-    public class _20180430121800_create_log_table : Migration
+    [Migration(20180417121800)]
+    public class _20180417121800_create_log_table : Migration
     {
         
             public override void Up()

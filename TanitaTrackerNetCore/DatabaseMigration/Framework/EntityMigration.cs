@@ -2,7 +2,7 @@
 using Domain.Entities;
 using FluentMigrator;
 using FluentMigrator.Builders.Create.Column;
-namespace DatabaseMigrations.Framework
+namespace DatabaseMigration.Framework
 {
         public abstract class EntityMigration<TEntity> : Migration where TEntity : BaseEntity
         {
