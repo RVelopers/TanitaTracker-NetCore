@@ -16,5 +16,15 @@ namespace WebNetCore.Controllers
             ViewData["Title"] = "List of Users";
             return View();
         }
+
+        public IActionResult Roles()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IActionResult Permissions()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
