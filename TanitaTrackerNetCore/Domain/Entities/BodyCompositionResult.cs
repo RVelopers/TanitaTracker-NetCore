@@ -1,19 +1,21 @@
 ﻿using System;
 namespace Domain.Entities
 {
-    public class BodyCompositionResult : BaseEntity
+    public class BodyCompositionResult : SoftDeletableEntity
     {
         /// <summary>
         /// Gets or sets the user identifier.
         /// </summary>
         /// <value>The user identifier.</value>
-        public int UserId { get; set; }
+        public int UserId { get; set; } 
+
+        public User User { get; set; }
 
         /// <summary>
         /// Gets or sets the weight.
         /// </summary>
         /// <value>The weight.</value>
-        public decimal Weight { get; set; }
+        public decimal Weight { get; set; } 
 
         /// <summary>
         /// Gets or sets the bmi.

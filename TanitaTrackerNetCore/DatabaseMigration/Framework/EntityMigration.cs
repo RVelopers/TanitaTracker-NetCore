@@ -28,7 +28,7 @@ namespace DatabaseMigration.Framework
                 Create.Column(columnName)
                  .OnTable(TableName)
                  .AsInt32()
-                 .ForeignKey(Pluralizer.Pluralize<TEntityTable>(), KeyId).NotNullable().Indexed();
+                 .ForeignKey(Pluralizer.Pluralize<TEntityTable>(), KeyId).NotNullable().Indexed().WithDefaultValue(0);
             }
 
             protected void CreateForeignKeyColumn<TEntityTable>(string columnName, object defaultValue)
