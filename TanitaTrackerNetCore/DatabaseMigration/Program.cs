@@ -1,8 +1,8 @@
 ﻿using System;
-using DatabaseMigrations.Migrations;
+using DatabaseMigration.Migrations;
 using FluentMigrator.Runner;
 using Microsoft.Extensions.DependencyInjection;
-namespace DatabaseMigrations
+namespace DatabaseMigration
 {
     public class Program
     {
@@ -30,9 +30,9 @@ namespace DatabaseMigrations
                     // Add SQLite support to FluentMigrator
                     .AddSQLite()
                     // Set the connection string
-                    .WithGlobalConnectionString("Data Source=test.db")
+                    .WithGlobalConnectionString("Data Source=TanitaTrackerDb.db")
                     // Define the assembly containing the migrations
-                    .WithMigrationsIn(typeof(_20180430121800_create_log_table).Assembly))
+                    .WithMigrationsIn(typeof(_20180417121800_create_log_table).Assembly))
                 // Enable logging to console in the FluentMigrator way
                 .AddLogging(lb => lb.AddFluentMigratorConsole())
                 // Build the service provider

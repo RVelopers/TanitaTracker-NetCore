@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace DatabaseMigrations.Framework
+namespace DatabaseMigration.Framework
 {
     public class Pluralizer
     {
