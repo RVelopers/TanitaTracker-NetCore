@@ -2,23 +2,22 @@
 @using Web_NetCore.Models
 
 @*@if (SignInManager.IsSignedIn(User))
-{
-    <form asp-area="" asp-controller="Account" asp-action="LogOff" method="post" id="logoutForm" class="navbar-right">
-        <ul class="nav navbar-nav navbar-right">
-            <li>
-                <a asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">Hello Jhon!</a>
-            </li>
-            <li>
-                <button type="submit" class="btn btn-link navbar-btn navbar-link">Log off</button>
-            </li>
-        </ul>
-    </form>
-}
-else
 {*@
+    <ul class="nav navbar-top-links navbar-right">
+        <li>
+            <span class="m-r-sm text-muted welcome-message">Welcome to TANITA TRACKER.</span>
+        </li>
+        @Html.Partial("_NotificationPartial")
+        <li>
+            <a href="#"><i class="fa fa-sign-out"></i> Log out</a>
+        </li>
+    </ul>
+@*}
+else
+{
     <ul class="nav navbar-top-links navbar-right">
         @Html.Partial("_NotificationPartial")
         <li><a asp-controller="Home" asp-action="Index">Register</a></li>
         <li><a asp-controller="Home" asp-action="Index">Log in</a></li>
     </ul>
-@*}*@
+}*@

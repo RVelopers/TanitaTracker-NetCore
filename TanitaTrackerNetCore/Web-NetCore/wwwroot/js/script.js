@@ -186,16 +186,7 @@ $(window).bind("resize", function () {
 // Local Storage functions
 // Set proper body class and plugins based on user configuration
 $(document).ready(function () {
-    // Button Go Back
-    if ($('#goBack').size() > 0){
-        $('#goBack').click(function(e){
-            e.preventDefault;
-            
-            parent.history.back();
-            return false;
-        });
-    }
-
+    
     if (localStorageSupport()) {
 
         var collapse = localStorage.getItem("collapse_menu");
@@ -240,6 +231,31 @@ $(document).ready(function () {
             $(".footer").addClass('fixed');
         }
     }
+
+    $('.dataTables-example').DataTable({
+        pageLength: 25,
+        responsive: true,
+        dom: '<"html5buttons"B>lTfgitp',
+        buttons: [
+            { extend: 'copy'},
+            {extend: 'csv'},
+            {extend: 'excel', title: 'ExampleFile'},
+            {extend: 'pdf', title: 'ExampleFile'},
+
+            {extend: 'print',
+                customize: function (win){
+                    $(win.document.body).addClass('white-bg');
+                    $(win.document.body).css('font-size', '10px');
+
+                    $(win.document.body).find('table')
+                            .addClass('compact')
+                            .css('font-size', 'inherit');
+                }
+            }
+        ]
+
+    });
+
 });
 
 // check if browser support HTML5 local storage
