@@ -6,22 +6,31 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using NToastNotify;
 
 namespace Web_NetCore
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
-
-        public IConfiguration Configuration { get; }
-
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvc()
+                .AddNToastNotifyToastr(new ToastrOptions()
+                {
+                    CloseButton = true,
+                    NewestOnTop = true,
+                    ProgressBar = true,
+                    PositionClass = ToastPositions.TopRight,
+                    ShowDuration = 300,
+                    HideDuration = 1000,
+                    TimeOut = 5000,
+                    ExtendedTimeOut = 1000,
+                    ShowEasing = "swing",
+                    HideEasing = "linear",
+                    ShowMethod = "fadeIn",
+                    HideMethod = "fadeOut"
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,6 +47,8 @@ namespace Web_NetCore
 
             app.UseStaticFiles();
 
+            app.UseNToastNotify();
+            
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

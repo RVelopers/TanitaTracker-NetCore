@@ -1,0 +1,38 @@
+{
+  "name": "tanita-tracker-netcore",
+  "version": "1.0.0",
+  "description": "This is a dotnet core web application to work alone with the Omron Body Composition Monitor and Scale (HBF-514C) that allows you to register user, add multiple body scan to each individual user and create reports based those data points.",
+  "dependencies": {
+    "jquery": "~3.3.1",
+    "bootstrap": "3.3.7",
+    "jquery-validation": "1.14.0",
+    "jquery-validation-unobtrusive": "3.2.6",
+    "font-awesome": "4.7.0",
+    "metismenu": "~2.2.0",
+    "pace-js": "~1.0.2",
+    "jquery-slimscroll": "~1.3.8",
+    "jquery-loadingModal": "~1.0.2",
+    "datatables": "~1.10.13"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RVelopers/TanitaTracker-NetCore.git"
+  },
+  "keywords": [
+    "net-core",
+    "tanita",
+    "body",
+    "composition",
+    "health"
+  ],
+  "author": "William Bello & Christian Rodriguez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RVelopers/TanitaTracker-NetCore/issues"
+  },
+  "homepage": "https://github.com/RVelopers/TanitaTracker-NetCore#readme"
+}

@@ -2,21 +2,50 @@
 // More info at https://go.microsoft.com/fwlink/?LinkId=808241
 [
   {
-    "outputFileName": "wwwroot/css/style.min.css",
+    "outputFileName": "wwwroot/css/main.min.css",
     // An array of relative input file paths. Globbing patterns supported
     "inputFiles": [
-      "wwwroot/css/style.css"
-    ]
+      "node_modules/bootstrap/dist/css/bootstrap.css",
+      "node_modules/metismenu/dist/metisMenu.css",
+      "node_modules/pace-js/themes/green/pace-theme-minimal.css",
+      "node_modules/datatables/media/css/jquery.dataTables.css"
+    ],
+    "minify": {
+      "enabled": true
+    }
   },
   {
-    "outputFileName": "wwwroot/js/script.min.js",
+    "outputFileName": "wwwroot/css/main-key-frame.css",
+    // An array of relative input file paths. Globbing patterns supported
     "inputFiles": [
-      "wwwroot/js/script.js"
+      "node_modules/jquery-loadingModal/css/jquery.loadingModal.css",
+      "wwwroot/css/inspinia.css",
+      "wwwroot/css/animate.css"
+    ],
+    "minify": {
+      "enabled": false,
+      "renameLocals": false
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/main.min.js",
+    "inputFiles": [
+      "node_modules/jquery/dist/jquery.js",
+      "node_modules/bootstrap/dist/js/bootstrap.js",
+      "node_modules/jquery-validation/dist/jquery.validate.js",
+      "node_modules/jquery-slimscroll/jquery.slimscroll.js",
+      "node_modules/metismenu/dist/metisMenu.js",
+      "node_modules/pace-js/pace.js",
+      "node_modules/jquery-loadingModal/js/jquery.loadingModal.js",
+      "node_modules/datatables/media/js/jquery.dataTables.js",
+      "wwwroot/js/inspinia.js",
+            "wwwroot/js/baseHelpers.js"
     ],
     // Optionally specify minification options
     "minify": {
       "enabled": true,
-      "renameLocals": true
+      "renameLocals": false
     },
     // Optionally generate .map file
     "sourceMap": false

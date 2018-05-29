@@ -1,26 +1,94 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
-
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
-
   <ItemGroup>
+    <PackageReference Include="BundlerMinifier.Core" Version="2.8.391" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="NToastNotify" Version="5.0.7" />
   </ItemGroup>
-
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+    <DotNetCliToolReference Include="BundlerMinifier.Core" Version="2.8.391" />
   </ItemGroup>
-
   <ItemGroup>
     <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\lib\dataTables\datatables.min.js" />
     <Content Remove="wwwroot\css\datatables.min.css" />
+    <Content Remove="node_modules\**" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="wwwroot\lib\dataTables\datatables.min.js" />
-    <None Include="wwwroot\css\datatables.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\.bower.json" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-theme.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\npm.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\LICENSE" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\chartJs\Chart.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\dataTables\datatables.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\flot\curvedLines.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\flot\excanvas.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\flot\jquery.flot.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\flot\jquery.flot.pie.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\flot\jquery.flot.resize.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\flot\jquery.flot.spline.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\flot\jquery.flot.symbol.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\flot\jquery.flot.time.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\flot\jquery.flot.tooltip.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-ui\images\ui-icons_444444_256x240.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-ui\images\ui-icons_555555_256x240.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-ui\images\ui-icons_777620_256x240.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-ui\images\ui-icons_777777_256x240.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-ui\images\ui-icons_cc0000_256x240.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-ui\jquery-ui.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-ui\jquery-ui.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-ui\LICENSE.txt" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation-unobtrusive\.bower.json" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\.bower.json" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\dist\additional-methods.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\LICENSE.md" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\.bower.json" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\dist\jquery.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\dist\jquery.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\dist\jquery.min.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\LICENSE.txt" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jvectormap\jquery-jvectormap-2.0.2.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jvectormap\jquery-jvectormap-2.0.2.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jvectormap\jquery-jvectormap-world-mill-en.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\metisMenu\jquery.metisMenu.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\pace\pace.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\peity\jquery.peity.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\slimscroll\jquery.slimscroll.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\slimscroll\jquery.slimscroll.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\sparkline\jquery.sparkline.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="node_modules\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="node_modules\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="node_modules\**" />
   </ItemGroup>
 </Project>

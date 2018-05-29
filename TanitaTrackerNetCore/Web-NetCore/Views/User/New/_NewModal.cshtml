@@ -1,0 +1,71 @@
+﻿@model NewUserViewModel
+<div class="modal-dialog modal-lg">
+    <div class="modal-content animated bounceInRight">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">×</span>
+            </button>
+            <h2>
+                Nuevo Usario <i class="fa fa-user-o text-muted"></i>
+            </h2>
+        </div>
+        <div class="modal-body">
+            <form method="post" id="primary-form" asp-action="New">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Nombre <span class="text-danger">(*)</span></label>
+                            <input asp-for="@Model.FirtsName" class="form-control" required/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Apellido <span class="text-danger">(*)</span></label>
+                            <input asp-for="@Model.LastName" class="form-control" required/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Edad <span class="text-danger">(*)</span></label>
+                            <input asp-for="@Model.Age" class="form-control" required/>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Altura <span class="text-danger">(*)</span></label>
+                            <input asp-for="@Model.Height" class="form-control" required/>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-default" data-dismiss="modal"><i class="fa fa-ban"></i> Cancelar</button>
+            <button class="btn btn-primary" id="add-user-action-btn"><i class="fa fa-pencil-square-o"></i> Agregar</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(function() {
+        $("#primary-form").validate({
+            rules: {
+                "FirstName": "required",
+                "LastName": "required"
+            },
+            messages: {
+                "FirstName": {
+                    "required ": "El nombre es requerido"
+                },
+                "LastName": {
+                    "required ": "El apellido es requerido"
+                }
+            }
+        });
+
+        $("#add-user-action-btn").on("click",
+            function() {
+                $.submitFormModal("#primary-form");
+        });
+    });
+</script>

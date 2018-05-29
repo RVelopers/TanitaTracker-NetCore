@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Web_NetCore.Models;
+using Web_NetCore.ViewModels;
 
 namespace Web_NetCore.Controllers
 {

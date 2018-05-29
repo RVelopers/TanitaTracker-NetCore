@@ -1,7 +1,6 @@
-﻿@section styles{ <link href="~/css/datatables.min.css" rel="stylesheet"> }
-@section libsScripts{ <script src="~/lib/dataTables/datatables.min.js"></script> }
-@section buttons{ <a href="#" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Add user</a> }
+﻿@section buttons{ <a id="show-add-user-modal-btn" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Add user</a> }
 
+<link href="~/node_modules/jquery-loadingModal/css/jquery.loadingModal.css"/>
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
         <div class="col-lg-12">
@@ -10,64 +9,64 @@
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover dataTables-example">
                             <thead>
-                                <tr>
-                                    <th>Rendering engine</th>
-                                    <th>Browser</th>
-                                    <th>Platform(s)</th>
-                                    <th>Engine version</th>
-                                    <th>CSS grade</th>
-                                </tr>
+                            <tr>
+                                <th>Rendering engine</th>
+                                <th>Browser</th>
+                                <th>Platform(s)</th>
+                                <th>Engine version</th>
+                                <th>CSS grade</th>
+                            </tr>
                             </thead>
                             <tbody>
-                                <tr class="gradeX">
-                                    <td>Trident</td>
-                                    <td>
-                                        Internet
-                                        Explorer 4.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td class="center">4</td>
-                                    <td class="center">X</td>
-                                </tr>
-                                <tr class="gradeC">
-                                    <td>Trident</td>
-                                    <td>
-                                        Internet
-                                        Explorer 5.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td class="center">5</td>
-                                    <td class="center">C</td>
-                                </tr>
-                                <tr class="gradeA">
-                                    <td>Trident</td>
-                                    <td>
-                                        Internet
-                                        Explorer 5.5
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td class="center">5.5</td>
-                                    <td class="center">A</td>
-                                </tr>
-                                <tr class="gradeA">
-                                    <td>Trident</td>
-                                    <td>
-                                        Internet
-                                        Explorer 6
-                                    </td>
-                                    <td>Win 98+</td>
-                                    <td class="center">6</td>
-                                    <td class="center">A</td>
-                                </tr>
+                            <tr class="gradeX">
+                                <td>Trident</td>
+                                <td>
+                                    Internet
+                                    Explorer 4.0
+                                </td>
+                                <td>Win 95+</td>
+                                <td class="center">4</td>
+                                <td class="center">X</td>
+                            </tr>
+                            <tr class="gradeC">
+                                <td>Trident</td>
+                                <td>
+                                    Internet
+                                    Explorer 5.0
+                                </td>
+                                <td>Win 95+</td>
+                                <td class="center">5</td>
+                                <td class="center">C</td>
+                            </tr>
+                            <tr class="gradeA">
+                                <td>Trident</td>
+                                <td>
+                                    Internet
+                                    Explorer 5.5
+                                </td>
+                                <td>Win 95+</td>
+                                <td class="center">5.5</td>
+                                <td class="center">A</td>
+                            </tr>
+                            <tr class="gradeA">
+                                <td>Trident</td>
+                                <td>
+                                    Internet
+                                    Explorer 6
+                                </td>
+                                <td>Win 98+</td>
+                                <td class="center">6</td>
+                                <td class="center">A</td>
+                            </tr>
                             </tbody>
                             <tfoot>
-                                <tr>
-                                    <th>Rendering engine</th>
-                                    <th>Browser</th>
-                                    <th>Platform(s)</th>
-                                    <th>Engine version</th>
-                                    <th>CSS grade</th>
-                                </tr>
+                            <tr>
+                                <th>Rendering engine</th>
+                                <th>Browser</th>
+                                <th>Platform(s)</th>
+                                <th>Engine version</th>
+                                <th>CSS grade</th>
+                            </tr>
                             </tfoot>
                         </table>
                     </div>
@@ -76,3 +75,16 @@
         </div>
     </div>
 </div>
+
+<div class="modal inmodal in" id="primary-modal" role="dialog" aria-hidden="true" style="display:none;" data-backdrop="static" data-keyboard="false"></div>
+@section scripts
+{
+    <script>
+        $(function() {
+            $("#show-add-user-modal-btn").on('click',
+                function() {
+                    $.getModalWithLoader('@Url.Action("NewModal")', "#primary-modal");
+                });
+        });
+    </script>
+}
