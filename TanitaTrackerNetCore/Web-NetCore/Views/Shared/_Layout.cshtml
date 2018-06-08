@@ -1,100 +1,93 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewData["Title"] | Tanita Tracker</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- Add local styles, mostly for plugins css file -->
 
     <environment names="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/font-awesome/css/font-awesome.css" />
+        <link rel="stylesheet" href="~/font-awesome/css/font-awesome.min.css" asp-append-version="true"/>
+        <link rel="stylesheet" href="~/css/main.min.css" asp-append-version="true"/>
+        <link rel="stylesheet" href="~/css/main-key-frame.css" asp-append-version="true"/>
         @if (IsSectionDefined("Styles"))
-            {@RenderSection("Styles", required: false)}
-        <link rel="stylesheet" href="~/css/animate.css" />
-        <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+        {
+            @RenderSection("Styles", required: false)
+        }
     </environment>
     <environment names="Staging,Production">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="~/font-awesome/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="~/font-awesome/css/font-awesome.min.css" asp-append-version="true"/>
+        <link rel="stylesheet" href="~/css/main.min.css" asp-append-version="true"/>
+        <link rel="stylesheet" href="~/css/main-key-frame.css" asp-append-version="true"/>
         @if (IsSectionDefined("Styles"))
-            {@RenderSection("Styles", required: false)}
-        <link rel="stylesheet" href="~/css/animate.css" />
-        <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+        {
+            @RenderSection("Styles", required: false)
+        }
     </environment>
 
 </head>
 <body>
 
-    <!-- Wrapper-->
-    <div id="wrapper" class="@Html.PageClass()">
+<!-- Wrapper-->
+<div id="wrapper" class="@Html.PageClass()">
 
-        <!-- Navigation -->
-        @Html.Partial("_Navigation")
+    <!-- Navigation -->
+    @Html.Partial("_Navigation")
 
-        <!-- Page wraper -->
-        <div id="page-wrapper" class="gray-bg @ViewBag.SpecialClass">
+    <!-- Page wraper -->
+    <div id="page-wrapper" class="gray-bg @ViewBag.SpecialClass">
 
-            <!-- Top Navbar -->
-            @Html.Partial("_TopNavbar")
-            <div class="row wrapper border-bottom white-bg page-heading">
-                <div class="col-lg-8">
-                    <h2>@ViewData["Title"]</h2>
-                    <ol class="breadcrumb">
-                        <li>
-                            <a href="@Url.Action("Index", "Home" )">Dashboard</a>
-                        </li>
-                        <li class="active">
-                            <strong>@Html.ViewContext.RouteData.Values["controller"]</strong>
-                        </li>
-                    </ol>
-                </div>
-                @if (IsSectionDefined("Buttons"))
-                {
+        <!-- Top Navbar -->
+        @Html.Partial("_TopNavbar")
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-8">
+                <h2>@ViewData["Title"]</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="@Url.Action("Index", "Home")">Dashboard</a>
+                    </li>
+                    <li class="active">
+                        <strong>@Html.ViewContext.RouteData.Values["controller"]</strong>
+                    </li>
+                </ol>
+            </div>
+            @if (IsSectionDefined("Buttons"))
+            {
                 <div class="col-lg-4">
                     <div class="title-action">
                         @RenderSection("Buttons", required: false)
                     </div>
                 </div>
-                }
-            </div>
-
-            <!-- Main view  -->
-            @RenderBody()
-
-            <!-- Footer -->
-            @Html.Partial("_Footer")
-
+            }
         </div>
-        <!-- End page wrapper-->
+
+        <!-- Main view  -->
+        @RenderBody()
+
+        <!-- Footer -->
+        @Html.Partial("_Footer")
 
     </div>
-    <!-- End wrapper-->
+    <!-- End page wrapper-->
 
-    <environment names="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/lib/metisMenu/jquery.metisMenu.js"></script>
-        <script src="~/lib/slimScroll/jquery.slimscroll.js"></script>
-        <script src="~/lib/pace/pace.min.js"></script>
-        @RenderSection("libsScripts", required: false)
-        <script src="~/js/script.js"></script>
+</div>
+<!-- End wrapper-->
 
-        <!-- Only for demo purpose -->
-        <!--script src="~/js/skin.config.js"></script-->
-    </environment>
-    <environment names="Staging,Production">
-        <script src="~/lib/jquery/dist/jquery.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="~/lib/metisMenu/jquery.metisMenu.js"></script>
-        <script src="~/lib/pace/pace.min.js"></script>
-        <script src="~/lib/slimScroll/jquery.slimscroll.min.js"></script>
-        @RenderSection("libsScripts", required: false)
-        <script src="~/js/script.js" asp-append-version="true"></script>
-    </environment>
+<environment names="Development">
+   <script src="~/js/main.min.js" asp-append-version="true"></script>
+    @RenderSection("libsScripts", required: false)
+    <!-- Only for demo purpose -->
+    <!--script src="~/js/skin.config.js"></script-->
+</environment>
+<environment names="Staging,Production">
+    <script src="~/js/main.min.js" asp-append-version="true"></script>
+    @RenderSection("libsScripts", required: false)
+</environment>
 
-    @RenderSection("scripts", required: false)
+@RenderSection("scripts", required: false)
+@* ReSharper disable once Mvc.ViewComponentNotResolved *@
+@await Component.InvokeAsync("NToastNotify")
 </body>
 </html>
