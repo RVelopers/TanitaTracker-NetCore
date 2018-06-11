@@ -3,6 +3,8 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+#DB file
+TanitaTrackerNetCore/DatabaseMigration/TanitaTrackerDb.db
 #node modules
 node_modules/
 
