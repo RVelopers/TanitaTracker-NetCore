@@ -3,9 +3,10 @@ namespace Domain.Entities
 {
     public abstract class BaseEntity
     {
-        public BaseEntity()
+        protected BaseEntity()
         {
             CreatedAt = DateTime.UtcNow;
+            IsActive = true;
         }
 
         /// <summary>
@@ -18,7 +19,7 @@ namespace Domain.Entities
         /// Gets or sets the created at.
         /// </summary>
         /// <value>The created at.</value>
-        public DateTime CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; } 
 
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="T:Domain.Entities.BaseEntity"/> is active.

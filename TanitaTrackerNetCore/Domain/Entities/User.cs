@@ -1,7 +1,4 @@
-﻿using System;
-using Domain.Abstractions;
-
-namespace Domain.Entities
+﻿namespace Domain.Entities
 {
     public class User : SoftDeletableEntity
     {
@@ -26,7 +23,7 @@ namespace Domain.Entities
         /// <summary>
         /// Gets or sets the height.
         /// </summary>
-        /// <value>The height.</value>
-        public decimal Height { get; set; }
+        /// <value>The height in meters.</value>
+        public double Height { get; set; }
     }
 }
