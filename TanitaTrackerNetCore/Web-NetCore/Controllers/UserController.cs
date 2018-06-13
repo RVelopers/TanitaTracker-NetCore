@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Linq;
+using AppService.Dto;
+using AppService.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 using NToastNotify;
 using Web_NetCore.ViewModels;
 
@@ -11,10 +13,13 @@ namespace WebNetCore.Controllers
     public class UserController : Controller
     {
         private readonly IToastNotification _toastNotification;
+        private readonly IUserService _userService;
 
-        public UserController(IToastNotification toastNotification)
+
+        public UserController(IToastNotification toastNotification, IUserService userService)
         {
             _toastNotification = toastNotification;
+            _userService = userService;
         }
 
         // GET: /<controller>/
@@ -26,13 +31,22 @@ namespace WebNetCore.Controllers
 
         public JsonResult New(NewUserViewModel model)
         {
-//            if (ModelState.IsValid)
-//            {
-//                return Json();
-//            }
-//
+            if (ModelState.IsValid)
+            {
+                var user = new CreateUserDto
+                {
+                    FirstName = model.FirtsName,
+                    LastName = model.LastName,
+                    Age = model.Age,
+                    Height = model.Height
+                };
+                var result = _userService.CreateUser(user);
+                _toastNotification.AddSuccessToastMessage(result.Message);
+                return Json(new { });
+
+            }
 //            return Json();
-            _toastNotification.AddSuccessToastMessage("Same for success message");
+            _toastNotification.AddErrorToastMessage(GetModelStateErrors());
             return Json(new { });
         }
         
@@ -49,6 +63,14 @@ namespace WebNetCore.Controllers
         public IActionResult NewModal()
         {
             return PartialView("New/_NewModal");
+        }
+        
+        private string GetModelStateErrors()
+        {
+            return string.Join(" ", ModelState.SelectMany(
+                x => x.Value.Errors,
+                (state, error) => $"{error.ErrorMessage}</br>"
+            ));
         }
     }
 }

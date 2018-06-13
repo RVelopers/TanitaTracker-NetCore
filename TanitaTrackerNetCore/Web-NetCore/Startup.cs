@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AppService.Services;
+using Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using NToastNotify;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Web_NetCore
 {
@@ -15,7 +15,21 @@ namespace Web_NetCore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+            
+            services.AddDbContext<TanitaTrackerDbContext>(options => options.UseSqlite("Data Source=../DatabaseMigration/TanitaTrackerDb.db"), ServiceLifetime.Singleton);
+            services.AddSingleton<ITanitaTrackerDatabase, TanitaTrackerDatabase>();
+
+            services.AddScoped<IUserService, UserService>();
+
             services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
                 .AddNToastNotifyToastr(new ToastrOptions()
                 {
                     CloseButton = true,
@@ -31,6 +45,7 @@ namespace Web_NetCore
                     ShowMethod = "fadeIn",
                     HideMethod = "fadeOut"
                 });
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,9 +58,11 @@ namespace Web_NetCore
             else
             {
                 app.UseExceptionHandler("/Home/Error");
+                app.UseHsts();
             }
-
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseCookiePolicy();
 
             app.UseNToastNotify();
             

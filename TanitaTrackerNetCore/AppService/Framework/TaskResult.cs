@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace AppService.Framework
@@ -15,7 +16,7 @@ namespace AppService.Framework
         }
     }
 
-    public class TaskResult
+    public class TaskResult 
     {
         /// <summary>
         /// Determine if a Task has been executed Succesfully

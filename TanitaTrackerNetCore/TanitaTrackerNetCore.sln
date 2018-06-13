@@ -1,4 +1,4 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web-NetCore", "Web-NetCore\Web-NetCore.csproj", "{2E55B472-F218-4A4E-9146-9FF706E6FC82}"
@@ -8,6 +8,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{B5CB4AE9-8C00-4DCF-A854-9C65BEC3D0B2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseMigration", "DatabaseMigration\DatabaseMigration.csproj", "{E8AE70B1-4D2A-44D4-99D9-23E2292A1272}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{25EA8707-5DFF-4992-8701-0963FB8AB41E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,5 +37,9 @@ Global
 		{E8AE70B1-4D2A-44D4-99D9-23E2292A1272}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8AE70B1-4D2A-44D4-99D9-23E2292A1272}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8AE70B1-4D2A-44D4-99D9-23E2292A1272}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25EA8707-5DFF-4992-8701-0963FB8AB41E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25EA8707-5DFF-4992-8701-0963FB8AB41E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25EA8707-5DFF-4992-8701-0963FB8AB41E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25EA8707-5DFF-4992-8701-0963FB8AB41E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

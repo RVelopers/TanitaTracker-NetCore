@@ -1,10 +1,13 @@
-﻿namespace Web_NetCore.ViewModels
+﻿namespace AppService.Dto
 {
-    public class NewUserViewModel
+    public class CreateUserDto
     {
-        public string FirtsName { get; set; }
+        public string FirstName { get; set; }
+
         public string LastName { get; set; }
+
         public int Age { get; set; }
+
         public double Height { get; set; }
     }
 }
